@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Exo 2', sans-serif;
+    box-sizing: border-box;
+}
+
+#cont {
+    padding: 10px;
+    height: 100vh !important;
+}
+
+.card-body {
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    overflow: hidden;
+}
+
+.detail-container {
+    padding: 10px 50px !important;
+}
+
+.about {
+    position: relative;
+    padding: 20px;
+    background-color: #f6f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    width: 100%;
+}
+
+#title {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(2rem, 3.5rem, 5rem) !important;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+}
+
+#rating {
+    color: #b64a4a;
+    font-weight: bold;
+}
+
+#image {
+    height: 100%;
+}
+
+
+#explanation p {
+    display: -webkit-box; /* Flexbox kullanarak kutuyu görüntüler */
+    -webkit-box-orient: vertical; /* Kutuyu dikey olarak hizalar */
+    -webkit-line-clamp: 10; /* Satır sayısını 10 ile sınırlar */
+    overflow: hidden; /* Taşan kısmı gizler */
+    text-overflow: ellipsis; /* Taşan kısmı üç nokta ile gösterir */
+}
+
+.detail table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f6f4f4;
+}
+
+.detail td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #f6f4f4;
+}
+
+.detail td:first-child {
+    font-weight: bold;
+    width: 120px;
+}
+
+@media screen and (max-width: 810px) {
+    .card-body {
+        flex-direction: column;
+    }
+
+    #image {
+        width: 100%;
+        height: auto;
+    }
+
+    #cont {
+        height: auto;
+        width: 100%;
+    }
+
+    .card-body {
+        height: auto;
+        width: 100%;
+    }
+
+    .detail-container {
+        padding: 5px 5px !important;
+    }
+}
+
+@media screen and (min-width: 811px) and (max-width: 1024px) {
+    #image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-height: 1281px) {
+
+    .detail-container {
+        padding: 20px 50px !important;
+    }
+
+    .card-body {
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .images {
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    #image {
+        width: 100%;
+        height: 55%;
+    }
+
+    #cont {
+        padding: 10px;
+        height: auto;
+    }
+
+    .about {
+        overflow: scroll;
+
+    }
+}
+

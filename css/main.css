@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Exo 2', sans-serif;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #FEFEFE;
+}
+
+.banner {
+    margin: auto;
+    padding: 10px 25px;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    transition: top 0.3s; /* Geçiş efekti ekleyin */
+    backdrop-filter: blur(5px);
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
+.banner a img {
+    height: 50px;
+}
+
+.logo-mini {
+    display: none;
+}
+
+.logo-search {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 7px;
+}
+
+#search {
+    position: relative;
+    width: 500px;
+
+}
+
+#search input {
+    width: 100% !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+#search input:focus {
+    box-shadow: none;
+    border: 1px solid #3C948B;
+    background-color: white;
+}
+
+#cont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#cont h5,
+p {
+    white-space: nowrap; /* Alt satıra kaymasını engeller */
+    overflow: hidden; /* Taşan kısmı gizler */
+    text-overflow: ellipsis; /* Taşan kısmı üç nokta ile gösterir */
+}
+
+.movie {
+    max-width: 350px;
+    flex: 1 0 350px;
+}
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: grey;
+    border: 1px solid #1F4B47;
+
+}
+
+.arrow i {
+    font-size: 50px;
+    color: #1F4B47;
+}
+
+.arrow:hover {
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 420px) {
+    #search {
+        width: 270px;
+    }
+
+    .banner a img {
+        display: none;
+    }
+
+    .logo-mini {
+        display: block !important;
+    }
+
+    .logo-search {
+        display: none;
+    }
+}
