@@ -8,6 +8,7 @@
 
 body {
     background-color: #FEFEFE;
+    scroll-behavior: smooth;
 }
 
 .banner {
@@ -78,6 +79,8 @@ p {
     max-width: 350px;
     flex: 1 0 350px;
 }
+
+
 
 .arrow {
     display: flex;

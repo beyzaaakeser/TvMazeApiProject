@@ -23,7 +23,7 @@
 
 .about {
     position: relative;
-    padding: 20px;
+    padding: 0 20px;
     background-color: #f6f4f4;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
     -webkit-background-clip: text;
     width: 100%;
     text-align: center;
-    font-size: clamp(2rem, 3.5rem, 5rem) !important;
+    font-size: clamp(1.5rem, 21.5rem, 3rem) !important;
     font-weight: bold;
     letter-spacing: 5px;
 
@@ -51,13 +51,15 @@
 
 #image {
     height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 
 #explanation p {
     display: -webkit-box; /* Flexbox kullanarak kutuyu görüntüler */
     -webkit-box-orient: vertical; /* Kutuyu dikey olarak hizalar */
-    -webkit-line-clamp: 10; /* Satır sayısını 10 ile sınırlar */
+    -webkit-line-clamp: 5; /* Satır sayısını 10 ile sınırlar */
     overflow: hidden; /* Taşan kısmı gizler */
     text-overflow: ellipsis; /* Taşan kısmı üç nokta ile gösterir */
 }
@@ -69,7 +71,7 @@
 }
 
 .detail td {
-    padding: 8px;
+    padding: 5px;
     border: 1px solid #ddd;
     background-color: #f6f4f4;
 }
@@ -78,6 +80,8 @@
     font-weight: bold;
     width: 120px;
 }
+
+
 
 @media screen and (max-width: 810px) {
     .card-body {
@@ -101,6 +105,11 @@
 
     .detail-container {
         padding: 5px 5px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .cast_container{
+        margin-bottom: 30px !important;
     }
 }
 
@@ -126,6 +135,7 @@
     .images {
         width: auto;
         height: auto;
+        max-height: 100vh;
         object-fit: cover;
         overflow: hidden;
     }
@@ -143,6 +153,135 @@
     .about {
         overflow: scroll;
 
+    }
+}
+
+
+
+
+.slide-container{
+    display: flex;
+    padding: 10px 35px;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background: linear-gradient(to left top, #F6F4F4, #f7f6fa);
+
+}
+.wrapper {
+    max-width: 1100px;
+    position: relative;
+    height: 100%;
+}
+.wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+.wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+    left: -22px;
+    z-index: 5;
+}
+.wrapper i:last-child{
+    right: -22px;
+}
+.wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 7) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    height: 100%;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+.carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel .card {
+    scroll-snap-align: start;
+
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 5px;
+    flex-direction: column;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel .card .img {
+    background: #e4e3e8;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+.card .img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid #fff;
+}
+.carousel .card h2 {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 5px;
+}
+
+@media screen  and (min-width: 1351px ) and (max-width: 1440px)  {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 5) - 9px);
+    }
+}
+
+
+@media screen  and (min-width: 901px ) and (max-width: 1350px)  {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 4) - 9px);
+    }
+}
+
+@media screen and (min-width: 601px ) and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 4) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
     }
 }
 
